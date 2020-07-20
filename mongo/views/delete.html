@@ -1,0 +1,47 @@
+$def with(contenedor,tam)
+<!DOCTYPE html>
+<html>
+  <header>
+   <center><h3 class="text-light bg-dark", "text-center">LISTA DE ALUMNOS<br>
+    <a class="navbar-brand" href="/">REGRESAR</a></h3>
+  </header>
+  <body background="https://userscontent2.emaze.com/images/5aaa7739-20d4-47e2-ba36-16218294b562/ffca82def668a2a5dc221ddd321b0171.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<table class="table table-ligth">
+  <thead>
+    <tr>
+      <th scope="col">Matricula</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Primer apellido</th>
+      <th scope="col">Segundo apellido</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    $for row in range(0,tam):
+        <tr>
+            <td>$contenedor[row]['matricula']</td>
+            <td>$contenedor[row]['nombre']</td>
+            <td>$contenedor[row]['apellido_pa']</td>
+            <td>$contenedor[row]['apellido_ma']</td>
+            <td>$contenedor[row]['edad']</td>
+            <td>$contenedor[row]['fecha_na']</td>
+            <td>$contenedor[row]['sexo']</td>
+            <td>$contenedor[row]['estado']</td>
+            <form method="POST" action="">
+                <input type="hidden" name="borrar" value= $contenedor[row]['_id']></input>
+                <td><button type="submit" class="btn btn-danger">ELIMINAR</button></td>
+            </form>
+            
+        </tr>
+</tbody>
+</table>
+  </body>
+</html>
+
+
+
+
